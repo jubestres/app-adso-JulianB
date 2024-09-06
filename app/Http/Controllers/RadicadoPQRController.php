@@ -23,7 +23,7 @@ class RadicadoPQRController extends Controller
         ]);
     }
 
-    public function getdata(Request $request)
+    public function get(Request $request)
     {
         return response()->json([
             "status" => "200",
