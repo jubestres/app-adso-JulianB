@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PQR extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["Fecha_radicacion","Descripcion","id_clientes","id_tipo_solicituds"];
 }

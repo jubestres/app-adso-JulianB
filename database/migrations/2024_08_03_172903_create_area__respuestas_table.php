@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area__respuestas', function (Blueprint $table) {
+        Schema::create('area_respuestas', function (Blueprint $table) {
             $table->id();
             $table->string("nombre");
-            $table->string("codigo");
+            $table->integer("codigo");
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area__respuestas');
+        Schema::dropIfExists('area_respuestas');
     }
 };

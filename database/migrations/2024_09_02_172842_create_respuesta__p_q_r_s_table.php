@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('respuesta__p_q_r_s', function (Blueprint $table) {
+        Schema::create('respuesta_p_q_r_s', function (Blueprint $table) {
             $table->id();
             $table->string("respuestacliente");
-            $table->unsignedBigInteger('id_cliente');
+            $table->unsignedBigInteger('id_clientes');
  
-            $table->foreign('id_cliente')->references('id')->on('clientes');
+            $table->foreign('id_clientes')->references('id')->on('clientes');
 
-            $table->unsignedBigInteger('id_radicadopqr');
+            $table->unsignedBigInteger('id_radicado_p_q_r_s');
  
-            $table->foreign('id_radicadopqr')->references('id')->on('radicado__p_q_r_s');
+            $table->foreign('id_radicado_p_q_r_s')->references('id')->on('radicado_p_q_r_s');
 
-            $table->unsignedBigInteger('id_arearespuesta');
+            $table->unsignedBigInteger('id_area_respuestas');
  
-            $table->foreign('id_arearespuesta')->references('id')->on('area__respuestas');
+            $table->foreign('id_area_respuestas')->references('id')->on('area_respuestas');
 
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('respuesta__p_q_r_s');
+        Schema::dropIfExists('respuesta_p_q_r_s');
     }
 };

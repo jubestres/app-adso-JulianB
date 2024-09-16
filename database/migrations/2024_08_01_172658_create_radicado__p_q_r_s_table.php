@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('radicado__p_q_r_s', function (Blueprint $table) {
+        Schema::create('radicado_p_q_r_s', function (Blueprint $table) {
             $table->id();
             $table->string("nombre");
-            $table->string("codigo");
+            $table->integer("codigo");
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('radicado__p_q_r_s');
+        Schema::dropIfExists('radicado_p_q_r_s');
     }
 };

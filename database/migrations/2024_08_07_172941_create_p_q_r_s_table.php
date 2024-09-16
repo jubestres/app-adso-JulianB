@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('p_q_r_s', function (Blueprint $table) {
             $table->id();
-            $table->string("Fecha_radicacion");
-            $table->string("Descripcion");
-            $table->unsignedBigInteger('id_cliente');
- 
-            $table->foreign('id_cliente')->references('id')->on('clientes');
+            $table->date('Fecha_radicacion'); 
+            $table->string('Descripcion');
 
-            $table->unsignedBigInteger('id_tiposolicitud');
+            $table->unsignedBigInteger('id_clientes');
  
-            $table->foreign('id_tiposolicitud')->references('id')->on('tipo__solicituds');
+            $table->foreign('id_clientes')->references('id')->on('clientes');
+
+            $table->unsignedBigInteger('id_tipo_solicituds');
+ 
+            $table->foreign('id_tipo_solicituds')->references('id')->on('tipo_solicituds');
+
             $table->timestamps();
         });
     }
