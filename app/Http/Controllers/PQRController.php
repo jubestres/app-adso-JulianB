@@ -42,11 +42,13 @@ class PQRController extends Controller
 
     public function get(Request $request)
     {
-        $PQR=PQR::All();
+        //al usar with se indica que hay una relacion para que el haga un inner join osea traga los datos de la realcion
+        $PQR=PQR::with('cliente')->get();
 
         return response()->json([
             "status" => "200",
             "message" => "Get data successfully",
+            "result"=> $PQR
         ]);
     }
 

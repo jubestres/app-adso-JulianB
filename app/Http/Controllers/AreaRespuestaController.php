@@ -47,6 +47,16 @@ class AreaRespuestaController extends Controller
         ]);
     }
 
+    public function getDataById(Request $request)
+    {
+        $AreaRespuesta=AreaRespuesta::where('id',$request->id)->get();
+
+        return response()->json([
+            "status" => "200",
+            "message" => "Get data successfully",
+        ]);
+    }
+
     public function delete(Request $request)
     {
         $AreaRespuesta=AreaRespuesta::findorfail($request->id);

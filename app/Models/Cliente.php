@@ -10,4 +10,9 @@ class Cliente extends Model
     use HasFactory;
 
     protected $fillable = ["nombre", "apellido", "cedula", "telefono", "correo", "radicado"];
+
+    //aca se especifica la misma relacion
+    public function pqr(){
+        return $this->hasMany(PQR::class, 'id_clientes');
+    }
 }
